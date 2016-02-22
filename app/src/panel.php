@@ -33,7 +33,7 @@ use Kirby\Panel\Models\Page\Blueprint as PageBlueprint;
 
 class Panel {
 
-  static public $version  = '2.2.2';
+  static public $version = '2.2.3';
 
   // minimal requirements
   static public $requires = array(
@@ -320,6 +320,9 @@ class Panel {
     $this->translations = new Collection;
 
     foreach(dir::read($this->roots()->translations()) as $dir) {
+      // filter out everything but directories
+      if(!is_dir($this->roots()->translations() . DS . $dir)) continue;
+      
       // create the translation object
       $translation = new Translation($this, $dir);
       $this->translations->append($translation->code(), $translation);
