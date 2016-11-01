@@ -134,6 +134,9 @@ form.loading:after {
   margin-top: -7px;
   color: #777;
 }
+.field-icon:hover .icon {
+  color: #8dae28;
+}
 .field-with-icon .input {
   body.ltr & {
     padding-right: 3.5em;
@@ -312,11 +315,11 @@ form.loading:after {
   outline: 0;
   border-color: #8dae28;
 }
+.input.over {
+  border-color: #000;
+}
 textarea.input {
   resize: none;
-}
-textarea.over {
-  border-color: #000;
 }
 .input:required,
 .input:invalid {
