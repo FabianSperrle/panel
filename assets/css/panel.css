@@ -411,6 +411,10 @@ body.rtl .nav-icon-right {
 .btn-wide {
   min-width: 10em; }
 
+.btn-disabled {
+  opacity: .25;
+  pointer-events: none; }
+
 /* Reset */
 fieldset {
   border: 0; }
@@ -831,8 +835,16 @@ body.rtl .field-with-icon .input-with-tags {
   margin-bottom: .5em; }
 
 .input-list-item .input {
+  position: relative;
+  display: block;
+  overflow: hidden; }
+
+.input-list-item .input span {
+  position: absolute;
   white-space: nowrap;
   overflow: hidden;
+  left: 2.5rem;
+  right: 1rem;
   text-overflow: ellipsis; }
 
 /* Input with items */
@@ -900,6 +912,7 @@ body.rtl .buttons .btn-submit {
     background: -ms-linear-gradient(bottom, #efefef, rgba(239, 239, 239, 0.9) 75%, rgba(239, 239, 239, 0));
     background: linear-gradient(bottom, #efefef, rgba(239, 239, 239, 0.9) 75%, rgba(239, 239, 239, 0));
     margin: 0;
+    z-index: 1000;
     padding: 1.5em 3em 1.5em; }
   .ltr .mainbar .form .buttons {
     left: 33.33%;
@@ -1395,7 +1408,7 @@ body.rtl .tag button.tag-label {
 
 .dashboard-item-icon i {
   position: static;
-  padding-top: .8em; }
+  padding-top: .9em; }
 
 .dashboard-item-text {
   display: inline-block;
@@ -1487,6 +1500,12 @@ body.rtl .dropdown-right:after {
 
 .dropdown-dark .dropdown-list li:last-child a {
   border-bottom: 0; }
+
+.fa.icon {
+  font-size: 14px; }
+
+.fa.fa-lg.icon {
+  font-size: 20px; }
 
 .icon {
   font-size: 14px;
@@ -2287,7 +2306,7 @@ body.rtl .sidebar-list > li > a {
 
 .sidebar-list > li > .option {
   position: absolute;
-  top: -1px;
+  top: 1px;
   background: red;
   z-index: 1;
   text-align: right;
@@ -2308,7 +2327,7 @@ body.rtl .sidebar-list > li > a {
 
 .sidebar-list .icon {
   position: absolute;
-  top: .4em; }
+  top: .45rem; }
   body.ltr .sidebar-list .icon {
     left: 0; }
   body.rtl .sidebar-list .icon {

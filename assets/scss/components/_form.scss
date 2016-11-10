@@ -460,8 +460,16 @@ textarea.input {
   margin-bottom: .5em;
 }
 .input-list-item .input {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.input-list-item .input span {
+  position: absolute;
   white-space: nowrap;
   overflow: hidden;
+  left: 2.5rem;
+  right: 1rem;
   text-overflow: ellipsis;
 }
 
@@ -543,6 +551,7 @@ textarea.input {
     background: -ms-linear-gradient(bottom, rgba(#efefef, 1), rgba(#efefef, .9) 75%, rgba(#efefef, 0));
     background: linear-gradient(bottom, rgba(#efefef, 1), rgba(#efefef, .9) 75%, rgba(#efefef, 0));
     margin: 0;
+    z-index: 1000;
     padding: 1.5em 3em 1.5em;
   }
   .ltr .mainbar .form .buttons {
