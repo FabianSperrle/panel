@@ -1,16 +1,20 @@
-.field-with-headline {
-  counter-increment: count;
-}
 .field-with-headline:first-child {
   padding-top: 0;
 }
 .field-with-headline {
   padding-top: 3em;
 }
-.field-with-headline .hgroup span {
+.field-with-headline .hgroup span:empty::before {
+  content: '\a0';
+}
+
+.field-with-headline-numbered {
+  counter-increment: count;
+}
+.field-with-headline-numbered .hgroup span {
   padding-left: 1.5em;
 }
-.field-with-headline .hgroup:before {
+.field-with-headline-numbered .hgroup::before {
   position: absolute;
   content: counter(count, decimal-leading-zero);
   left: 0;
@@ -107,19 +111,25 @@
   text-align: left;
   vertical-align: top;
 }
+.structure-readonly td, .structure-readonly th {
+  background: #efefef;
+  color: #777;
+}
 .structure-table th {
   padding: .5em;
   font-weight: 400;
   color: #777;
   font-style: italic;
 }
-.structure-table td a {
+.structure-table td a, .structure-table td span {
   display: block;
   padding: .5em;
   overflow: hidden;
   width: 100%;
   text-overflow: ellipsis;
-  cursor: move;
+}
+structure[data-sortable=true] .structure-table td a {
+  cursor: move;  
 }
 .structure-table-options {
   width: 3rem;
